@@ -1,0 +1,175 @@
+page-select-catalog {
+    ion-icon {
+        font-size: 18px;
+    }
+    ion-navbar.web,
+    ion-navbar.hd {
+        width: 257px;
+        .catalog-title {
+            justify-content: space-between;
+            .catalog-manage {
+                display: flex;
+                span {
+                    // margin-top: 7px;
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+                img {
+                    vertical-align: middle;
+                    display: inline-block;
+                }
+            }
+            [both-center] {
+                color: #484848;
+                font-size: 16px;
+            }
+        }
+    }
+    .scroll-content {
+        overflow-y: scroll !important;
+        bottom: 44px;
+        margin-top: 0 !important;
+    }
+    ion-content.web,
+    ion-content.hd {
+        margin-top: 48px;
+        background-color: white;
+    }
+    .toolbar-ios {
+        padding: 0px;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+        border-color: #dadada;
+    }
+    .catalog-title {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0px 10px;
+        height: 48px;
+        line-height: 48px;
+        background: #fff;
+        .catalog-manage {
+            display: flex;
+            span {
+                // margin-top: 7px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+            img {
+                width: 32px;
+                height: 32px;
+                display: inline-block;
+                margin-top: 8px;
+            }
+        }
+        [both-center] {
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        [both-span] {
+            color: #4c85dc;
+            font-size: 16px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+    }
+    .catalog-list {
+        margin: 0px;
+        .catalog-item-open,
+        .catalog-item {
+            // position: absolute;
+            // z-index: 11;
+            // left: 10px;
+            width: 34px; // height: 34px;
+            margin-top: -1px;
+            background: url('../assets/img/web/i_tree_shrink_nor.png') no-repeat;
+        }
+        .catalog-item-nor,
+        .catalog-item-click {
+            line-height: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            color: #666666;
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #dadada;
+            padding: 10px 0px 10px 10px;
+            font-size: 16px;
+        }
+        .catalog-item-click {
+            color: #4c85dc;
+        }
+        .catalog-item-open {
+            background: url('../assets/img/web/i_tree_spread_pass.png') no-repeat;
+        }
+        .catalog-child-div {
+            border-width: 0px 0px 1px 0px;
+            border-style: solid;
+            border-color: #dadada;
+            color: #666666;
+        }
+        .catalog-child-click,
+        .catalog-child-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 3px 0px 3px 34px;
+            color: #666666;
+            background: #f9f9f9;
+            border-color: #dadada;
+            // height: 50px;
+            font-size: 14px;
+        }
+        .catalog-child-click {
+            color: #4c85dc;
+        }
+        .catalog-p {
+            width: 100%;
+            margin: 0px;
+            height: 23px;
+            line-height: 23px;
+            display: inline-flex;
+            .catalog-name {
+                max-width: 145px;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                text-overflow: ellipsis;
+            }
+            .catalog-num {
+                // padding-top: 2px;
+                margin-left: 2px;
+                // display: inline-block;
+                // position: absolute;
+            }
+        }
+        .catalog-img {
+            width: 24px;
+            height: 24px;
+            margin: 3px 10px 0px 0px;
+        }
+        .catalog-child-img {
+            width: 24px;
+            height: 24px;
+            // margin: -5px 10px 0px 0px;
+            margin: 0 10px 0px 0px;
+        }
+    }
+    .null-div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/img/mb/default.png') no-repeat;
+        background-size: 265px 145px;
+        background-position-x: 50%;
+        background-position-y: 72px;
+    }
+    .null-div::after {
+        content: '目录为空，请在编辑目录页新增目录';
+        margin-top: 240px;
+        color: #484848;
+        font-size: 14px;
+    }
+}

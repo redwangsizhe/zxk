@@ -1,0 +1,59 @@
+<ion-content [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="" refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="wk-none" *ngIf="fromIphone==1&&wkShow?.length==0">
+    <div class="wk-none-img">
+      <img src="assets/img/pad/default@2x.png">
+      <div>暂无微课资源</div>
+    </div>
+    <button ion-button class="wk-none-btn" [hidden]="fromIphone==0" outline (click)="recWk()">录制微课</button>
+  </div>
+  <div class="content-div">
+    <ion-grid *ngIf="fromIphone!=1" class="subject-grid">
+      <ion-row>
+        <ion-col class="wk-card-add" subject-col col-5>
+          <p>添加新微课</p>
+          <button ion-button outline (click)="addwk()" [ngClass]="{'add-wk-web':fromIphone==0,'add-wk-h':fromIphone==2}" [hidden]="fromIphone!=0">上传</button>
+          <input type="file" *ngIf="fromIphone==0&&uploaderWk" ng2FileSelect [uploader]="uploader" accept="audio/mp4,video/mp4" (change)="selectedFileOnChanged()"
+          />
+          <button ion-button [ngClass]="{'rec-wk-hd':fromIphone==2,'rec-wk-h':fromIphone==0}" [hidden]="fromIphone==0" outline (click)="recWk()">录制</button>
+          <img src="assets/img/pad/ico_help_nor@2x.png" (click)="showAlert()" *ngIf="fromIphone==0" />
+        </ion-col>
+        <ion-col *ngFor="let w of wkShow;let i = index" col-5 [ngClass]="{'wk-card':w.status==null,'wk-p':w.status=='NORMAL','wk-a':w.status=='PENDING_AUDIT','wk-f':w.status=='AUDIT_FAIL'}">
+          <div *ngIf="w.status=='AUDIT_FAIL'" class="audit-fail" (click)="checkFailReason(w)"></div>
+          <div (click)='wkClick(w)' class="wk-card-content">
+            <img class="img" [loadImg]="w.posterFileId=='-666'?'assets/img/web/weike_video_defaultcover.png':w.posterFilePath" />
+            <div class="wk-div">
+              <div class="wk-div-title">
+                <p class="wk-div-p" #fileName>{{w.fileName}}<span class="wk-div-span" *ngIf="overShow[i]">...</span></p>
+              </div>
+              <p class="wk-div-author">{{w.createTime | changetime}}</p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div *ngIf="fromIphone==1" class="subject-grid">
+      <div *ngFor="let w of wkShow;let i = index" [ngClass]="{'wk-card':w.status==null,'wk-p':w.status=='NORMAL','wk-a':w.status=='PENDING_AUDIT','wk-f':w.status=='AUDIT_FAIL'}">
+        <div *ngIf="w.status=='AUDIT_FAIL'" class="audit-fail" (click)="checkFailReason(w)"></div>
+        <div (click)='wkClick(w)' class="wk-card-content">
+          <img class="img" [loadImg]="w.posterFileId=='-666'?'assets/img/web/weike_video_defaultcover.png':w.posterFilePath" />
+          <div class="wk-div">
+            <div class="wk-div-title">
+              <p class="wk-div-p" #fileName>{{w.fileName}}<span class="wk-div-span" *ngIf="overShow[i]">...</span></p>
+            </div>
+            <p class="wk-div-author">{{w.createTime | changetime}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-fab right bottom *ngIf="fromIphone==1&&wkShow?.length>0">
+    <button ion-fab (click)="recWk()" [hidden]="fromIphone==0">录制</button>
+  </ion-fab>
+  <ion-infinite-scroll *ngIf="wkShow?.length!=wkLength" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

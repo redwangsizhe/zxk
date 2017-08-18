@@ -1,0 +1,163 @@
+page-person-question-list {
+    .mathquill-rendered-math {
+        font-size: 8px !important;
+        margin: 0px !important;
+    }
+    .st-card,
+    .st-a,
+    .st-p,
+    .st-f {
+        cursor: pointer;
+        height: 115px;
+        margin: 15px;
+        padding: 12px 20px;
+        .questionList-parent {
+            margin-top: 4px;
+        }
+        .questionList {
+            display: flex;
+            span {
+                font-size: 16px; // margin-top: 12px;
+                color: #484848;
+            }
+        }
+        .st-div-title {
+            padding: 0px 10px 0px 10px;
+            margin: 0px;
+            font-size: 16px;
+            color: #484848;
+            text-overflow: ellipsis;
+            white-space: normal;
+            height: 100px;
+            line-height: 30px;
+            /* autoprefixer: off*/
+            -webkit-box-orient: vertical;
+            /* autoprefixer: on*/
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+        .st-div-title-span {
+            margin: 0px;
+            font-size: 16px;
+            color: #484848;
+            padding: 0px 5px 0px 0px;
+        }
+        .st-div-title-one {
+            flex: 1;
+            margin: 0;
+            font-size: 16px;
+            height: 32px;
+            color: #484848;
+            overflow-y: hidden;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 0px 5px 0px 0px;
+        }
+        .st-div-title-three {
+            font-size: 16px;
+        }
+    }
+    .st-card {
+        background: url('../assets/img/mb/list@2x.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .st-p {
+        background: url('../assets/img/mb/lisi_pass@2x.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .st-a {
+        background: url('../assets/img/mb/lisi_audit@2x.png') no-repeat;
+        background-size: 100% 100%;
+    }
+    .st-f {
+        background: url('../assets/img/mb/lisi_refuse@2x.png') no-repeat;
+        background-size: 100% 100%;
+        .audit-fail {
+            width: 30px;
+            height: 30px;
+            float: right;
+            z-index: 20;
+        }
+    }
+    .null-div {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background: url('../assets/img/mb/default.png') no-repeat;
+        background-size: 265px 145px;
+        background-position-x: 50%;
+        background-position-y: 72px;
+    }
+    .null-div::after {
+        content: '暂无试题资源';
+        margin-top: 240px;
+        color: #484848;
+        font-size: 14px;
+    }
+    ion-content.web {
+        .st-add {
+            height: 128px;
+            margin: 15px;
+            padding: 0px 10px;
+            background: url('../assets/img/mb/list@2x.png');
+            background-size: 100% 100%;
+            text-align: center;
+            div {
+                padding-top: 20px;
+                font-size: 16px;
+                color: #666666;
+            }
+            button {
+                margin: 31px 5px 0 5px;
+                border-radius: 4px;
+                border-color: #5ea4ee;
+                background-color: #ffffff;
+                color: #5ea4ee;
+                font-size: 14px;
+                width: 84px;
+                height: 28px;
+            }
+            button:hover {
+                background-color: #6caff6;
+                color: #ffffff;
+            }
+        }
+    }
+    ion-content.web,
+    ion-content.hd {
+        height: 93%;
+        .st-p {
+            background: url('../assets/img/web/pass.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        .st-a {
+            background: url('../assets/img/web/audit.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        .st-f {
+            background: url('../assets/img/web/refuse.png') no-repeat;
+            background-size: 100% 100%;
+        }
+    }
+}
+
+.rejectReason {
+    .alert-wrapper {
+        width: 310px;
+        height: 180px;
+        .alert-message {
+            font-size: 14px;
+            display: block;
+            width: 280px;
+            margin-top: 6px;
+        }
+    }
+    .alert-button-group {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+}

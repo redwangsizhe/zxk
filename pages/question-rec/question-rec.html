@@ -1,0 +1,18 @@
+<ion-header>
+ <ion-navbar>
+      <ion-title *ngIf="editType == 'edit'">编辑</ion-title>
+      <ion-title *ngIf="editType != 'edit'">录题</ion-title>
+    </ion-navbar> 
+</ion-header>
+
+<ion-content>
+    <iframe id="myiframe" [src]="src">
+
+    </iframe>
+    <!--<button ion-button (click)="addSec()">保存弹窗</button>-->
+    <!--<button ion-button (click)="saveSrc()">保存模态窗</button>-->
+    <!--<div class="page-save" *ngIf="openSave" >
+        <page-save-resource></page-save-resource>
+    </div>-->
+
+</ion-content>

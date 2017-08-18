@@ -1,0 +1,339 @@
+page-resource-person-dir-list {
+    .scroll-content {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        bottom: 44px;
+        height: 98%;
+    }
+    .item:hover {
+        .resource-btn-web {
+            display: flex;
+        }
+    }
+    ion-navbar.web,
+    ion-navbar.hd {
+        width: 257px;
+    }
+    ion-content.web,
+    ion-content.hd {
+        margin-top: 38px;
+        .scroll-content {
+            background-color: white;
+            width: 273px;
+        }
+    }
+    ion-title {
+        background-color: #355d9a;
+        .toolbar-title {
+            overflow: hidden;
+        }
+    }
+    .dir-none {
+        margin-right: 16px;
+        text-align: center;
+        img {
+            margin-top: 72px;
+            height: 145px;
+            width: 265px;
+        }
+        div {
+            font-size: 14px;
+            color: #484848;
+        }
+        button {
+            width: 250px;
+            height: 44px;
+            font-size: 18px;
+            border-radius: 50px;
+            color: #6e98d9;
+            margin-top: 30px;
+        }
+    }
+    .rechristen {
+        width: 98.5px;
+        height: 68px;
+        background-color: #cccccc;
+    }
+    .remove {
+        width: 90px;
+        height: 68px;
+        background-color: #ff6161;
+    }
+    .dir-list {
+        margin-top: 0px;
+        .dir-item {
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            .resource-file-content {
+                position: absolute;
+                left: 60px;
+                top: 14px;
+                div {
+                    font-size: 14px;
+                    color: #484848;
+                }
+                span {
+                    font-size: 12px;
+                    color: #484848;
+                }
+            }
+            .back-nor {
+                float: right;
+                margin-top: -38px;
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+        .resource-btn-web {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 30;
+            .rechristen {
+                opacity: 1;
+                width: 98.5px;
+                height: 68px;
+                background-color: #cccccc;
+                margin: 0;
+                padding: 0;
+                margin-right: -5px;
+                border-radius: 0;
+            }
+            .remove {
+                opacity: 1;
+                width: 90px;
+                height: 68px;
+                background-color: #ff6161;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+        }
+        .resource-btn-mb {
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 30;
+            .rechristen {
+                width: 98.5px;
+                height: 68px;
+                background-color: #cccccc;
+                margin: 0;
+                padding: 0;
+                margin-right: -5px;
+                border-radius: 0;
+            }
+            .remove {
+                width: 90px;
+                height: 68px;
+                background-color: #ff6161;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+            }
+            .remove-h {
+                width: 90px;
+                height: 68px;
+                background-color: #ff6161;
+                margin: 0;
+                padding: 0;
+                border-radius: 0;
+                margin-right: 16px;
+            }
+        }
+    }
+}
+
+.alertCss {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        .alert-message {
+            display: inline-table;
+        }
+        .alert-input-group {
+            position: absolute;
+            width: 100%;
+            top: 30%;
+        }
+        .alert-button-group {
+            margin-top: 2px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}
+
+.alertCss.mb {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        position: absolute !important;
+        top: 50% !important;
+        margin-top: -90px !important;
+        left: 50%;
+        margin-left: -155px;
+        .alert-message {
+            display: inline-table;
+        }
+        .alert-input-group {
+            position: absolute;
+            width: 100%;
+            top: 30%;
+        }
+        .alert-button-group {
+            margin-top: 2px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}
+
+.alertCssR {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        .alert-message {
+            height: 30px;
+            display: inline-table;
+        }
+        .alert-button-group {
+            margin-top: 6px;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            margin-bottom: 8px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}
+
+.alertCssR.mb {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        position: absolute !important;
+        top: 50% !important;
+        margin-top: -90px !important;
+        left: 50%;
+        margin-left: -155px;
+        .alert-message {
+            height: 30px;
+            display: inline-table;
+        }
+        .alert-button-group {
+            margin-top: 6px;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            margin-bottom: 8px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}
+
+.delDir {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        .alert-message {
+            font-size: 16px;
+            position: absolute;
+            top: 28%;
+            display: inline-table;
+        }
+        .alert-button-group {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}
+
+.delDir.mb {
+    .button-inner {
+        font-weight: 100;
+    }
+    .alert-wrapper {
+        width: 310px;
+        min-height: 180px;
+        position: absolute !important;
+        top: 50% !important;
+        margin-top: -90px !important;
+        left: 50%;
+        margin-left: -155px;
+        .alert-message {
+            font-size: 16px;
+            position: absolute;
+            top: 28%;
+            display: inline-table;
+        }
+        .alert-button-group {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            .alert-button {
+                border-top: 0.55px solid #dbdbdf;
+                border-right: 0.55px solid #dbdbdf;
+            }
+        }
+        .alert-input {
+            height: 44px;
+            border: 0.55px solid #ccc;
+        }
+    }
+}

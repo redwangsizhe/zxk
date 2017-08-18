@@ -1,0 +1,108 @@
+page-question-rec {
+    .back-button {
+        color: white;
+        display: block;
+    }
+    .scroll-content {
+        z-index: 20;
+        overflow: visible;
+        .save-header {
+            margin-top: -42px;
+            z-index: 20;
+        }
+    }
+    ion-title {
+        background-color: #355d9a;
+        .toolbar-title-ios {
+            color: white;
+            font-size: 16px;
+            font-weight: 100;
+        }
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    .page-save {
+        position: absolute;
+        width: 300px;
+        height: 100%;
+        top: 0%;
+        right: 0%;
+    }
+}
+
+.addSec {
+    .alert-wrapper {
+        max-width: 420px;
+        width: 420px;
+        height: 510px;
+        .alert-head {
+            background-color: lightgray;
+            .alert-title {
+                margin-top: 0px;
+                font-weight: 0;
+            }
+        }
+        .alert-message {
+            margin-top: 200px;
+            font-size: 22px;
+            color: #494949;
+        }
+        .img {
+            position: absolute;
+            top: 80px;
+            width: 280px;
+            height: 130px;
+            left: 50%;
+            margin-left: -140px;
+            background: url("../assets/img/web/pic_success.png");
+            border: none;
+        }
+        .back {
+            margin-top: 15px;
+        }
+        .back,
+        .continue {
+            width: 340px;
+            height: 44px;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #484848;
+            margin-left: 40px;
+        }
+        .back:hover,
+        .continue:hover {
+            color: #5ea4ee;
+            border: 1px solid #84bbf6;
+        }
+        .back:active,
+        .continue:active {
+            color: #5ea4ee;
+            border: 1px solid #84bbf6;
+            background-color: #ecf5ff;
+        }
+        .continue {
+            margin-top: 10px;
+        }
+        .print {
+            margin-top: 30px;
+            width: 340px;
+            height: 44px;
+            margin-left: 40px;
+            background-color: #84bbf6;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            font-weight: normal;
+        }
+        .print:hover {
+            background-color: #6caff6;
+        }
+        .print:active {
+            background-color: #5ea4ee;
+        }
+    }
+}

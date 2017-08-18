@@ -1,0 +1,53 @@
+<ion-header (click)="closeBtn($event)">
+  <ion-navbar color="primary" [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+    <ion-buttons start *ngIf="fromIphone!=1">
+      <button ion-button (click)="intoCatalog()">
+        <img src="assets/img/mb/i_popup_back_disable.png"/>
+      </button>
+    </ion-buttons>
+    <ion-title> 管理目录</ion-title>
+    <ion-buttons end>
+      <button ion-button class="add" (click)="doPrompt()" *ngIf='Dirlist?.length!=0'> 新增</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content (click)="closeBtn($event)" [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+  <div *ngIf='Dirlist?.length==0' class="dir-none">
+    <img src="assets/img/mb/default.png" />
+    <div> 当前无目录，点击新增 </div>
+    <button ion-button (click)="doPrompt()" outline>新增目录</button>
+  </div>
+
+  <ion-list *ngIf='Dirlist?.length!=0' class="dir-list">
+    <ion-item *ngFor='let dir of Dirlist;let i =index' (swipe)="swipe($event,i)">
+      <div class="dir-item" (click)="tzDir(i)">
+        <div class="left">
+          <img src="assets/img/mb/ico_folder.png" class="resource-file" />
+        </div>
+        <div class="resource-file-content">
+          <div>{{dir.resDirctoryList?.dirName}}</div>
+          <p>
+            <span>{{dir.dirNum}}个文件夹</span>
+            <!--<span>{{dir.resNum}}个文件</span>-->
+          </p>
+        </div>
+        <div class="back-nor">
+          <img src="assets/img/mb/i_arrow_rgt.png" />
+        </div>
+      </div>
+      <div *ngIf="dir.resDirctoryList.id==isSwipeId&&fromIphone!=0&&i!=0" class="resource-btn-mb">
+        <button ion-button title="dir-btn" (click)="rechristen(dir)" class="rechristen">重命名</button>
+        <button ion-button title="dir-btn" (click)="removeItem(dir)" [ngClass]="{'remove':fromIphone==1,'remove-h':fromIphone==2}" >删除</button>
+      </div>
+      <div *ngIf="fromIphone==0&&i!=0" [ngClass]="{'resource-btn-web':'i!=0'}">
+        <button ion-button title="dir-btn" (click)="rechristen(dir)" class="rechristen">重命名</button>
+        <button ion-button title="dir-btn" (click)="removeItem(dir)" class="remove">删除</button>
+      </div>
+
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll *ngIf="Dirlist?.length>=20" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

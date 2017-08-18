@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar hideBackButton="true" [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+        <div class="catalog-title">
+            <span both-center (click)="openCatalogAll()" *ngIf="fromIphone!=1">{{openCatalogStr}}</span>
+            <div class="catalog-manage">
+                <img src="assets/img/mb/ico_manage@2x.png" />
+                <span both-span (click)="manageDir()">管理目录</span>
+            </div>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+    <ion-list class="catalog-list" *ngFor="let c of catalogInfos;let i=index">
+        <div  [ngClass]="{'catalog-item-click':c.id==catalogInfo.id,'catalog-item-nor':c.id!=catalogInfo.id}">
+            <button (click)="openCatalog(i)" [ngClass]="{'catalog-item':!c.open,'catalog-item-open':c.open}"></button>
+            <div (click)="selectCatalog(i)" class="catalog-p"><div class="catalog-name">{{c.dirName}}</div><div class="catalog-num">({{c.sumRes||0}})</div></div>
+            <ion-icon (click)="selectCatalog(i)" [hidden]="c.id!=catalogInfo.id" class="catalog-img" name="md-checkmark"></ion-icon>
+        </div>
+        <div class="catalog-child-div" *ngIf="c.open">
+            <div [ngClass]="{'catalog-child-click':c1.id==catalogInfo.id,'catalog-child-item':c1.id!=catalogInfo.id}" (click)="selectcatalogChild(i,j)"
+                *ngFor="let c1 of c.children;let j = index">
+                <p>{{c1.dirName}}({{c1.sumRes||0}})
+                    <p>
+                        <ion-icon [hidden]="c1.id!=catalogInfo.id" class="catalog-child-img" name="md-checkmark"></ion-icon>
+            </div>
+        </div>
+    </ion-list>
+    <!--没有目录时显示-->
+    <div class="null-div" *ngIf="catalogInfos.length==0"></div>
+</ion-content>

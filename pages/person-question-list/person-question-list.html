@@ -1,0 +1,31 @@
+<ion-content [ngClass]="{'web':fromIphone==0,'mb':fromIphone==1,'hd':fromIphone==2}">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="下拉刷新" refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div *ngIf="fromIphone==0" class="st-add">
+    <div>录入新题目，请选择题型</div>
+    <button ion-button outline *ngFor="let type of stType;let i=index" (click)="openModal($event,i)">{{type}}</button>
+  </div>
+  <div class="null-div" *ngIf="stShow?.length==0&&fromIphone!=0"></div>
+  <div *ngFor="let s of stShow" [ngClass]="{'st-card':s.status==null,'st-p':s.status=='NORMAL','st-a':s.status=='PENDING_AUDIT','st-f':s.status=='AUDIT_FAIL'}">
+    <div *ngIf="s.status=='AUDIT_FAIL'" class="audit-fail" (click)="checkFailReason(s)"></div>
+    <div (click)="toDetailsQuestion(s)" class="st-content">
+      <div class="st-div-title" *ngIf="s.questionList==null" [innerHTML]="s.question|question"></div>
+      <p class="st-div-title-one" *ngIf="s.questionList!=null" [innerHTML]="s.question|question"></p>
+      <div *ngIf="s.questionList?.length>0" class='questionList-parent'>
+        <div *ngIf="s.questionList[0]" class="questionList"><span class="st-div-title-span">1.</span>
+          <p *ngIf="s.type!='7'" class="st-div-title-one" [innerHTML]="s.questionList[0]?.question|question"></p>
+          <p class="st-div-title-one" *ngIf="s.type=='7'">______</p>
+        </div>
+        <div *ngIf="s.questionList[1]" class="questionList"><span class="st-div-title-span">2.</span>
+          <p *ngIf="s.type!='7'" class="st-div-title-one" [innerHTML]="s.questionList[1]?.question|question"></p>
+          <p class="st-div-title-one" *ngIf="s.type=='7'">______</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ion-infinite-scroll *ngIf="stShow?.length!=stLength" (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
